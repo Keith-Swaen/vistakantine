@@ -1,5 +1,7 @@
 
-<?php  include('../include/header.inc.php') ?>
+<?php  
+//test
+include('../include/header.inc.php') ?>
 
     <div class="contact_container">
         <div class="contact_row">
