@@ -35,9 +35,12 @@
 
     <div class="home_gallery-text">
 
-    <?php //gebruik onderstaande check om tekst te vertalen //engels - nederlands
-        print "<h1>" . ($currentLanguage == "en" ? "Our flyers" : "Onze flyers") . "</h1>";
-        print "<h2>" . ($currentLanguage == "en" ? "Check out our flyers below!" : "Bekijk hieronder onze flyers!") . "</h2>";
+
+    <?php
+        echo '<h1>' . FLYERS . '</h1>';
+        echo '<h2>' . FLYERS_DESCRIPTION . '</h2>';
+        //print "<h1>" . ($currentLanguage == "en" ? "Our flyers" : "Onze flyers") . "</h1>";
+        // print "<h2>" . ($currentLanguage == "en" ? "Check out our flyers below!" : "Bekijk hieronder onze flyers!") . "</h2>";
     ?>
     </div>
 
@@ -55,5 +58,5 @@
             <img src='../css/images/flyer4.png' alt='flyer4'>
         </div>
     </div>
-
+    
 <?php  include('../include/footer.inc.php'); ?>

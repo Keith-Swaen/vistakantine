@@ -42,8 +42,6 @@
         </div>
 
     </footer>
-
-    <script src="app.js"></script>
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
     
     <!-- jQuery CDN - Slim version (=without AJAX) -->

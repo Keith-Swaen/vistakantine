@@ -21,6 +21,19 @@ if (isset($_GET['language'])) {
         }
     }
 }
+
+
+$lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
+$acceptLang = ['fr', 'it', 'en']; 
+$lang = in_array($lang, $acceptLang) ? $lang : 'en';
+$file = '../language/lang.' . $lang . '.inc.php';
+
+if (!file_exists($file)) {
+    $file = '../language/lang.nl.inc.php';
+}
+
+require_once ($file);
+
 require_once ('../database/database.php');
 
 ?>
@@ -30,8 +43,6 @@ require_once ('../database/database.php');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-
-    <link rel="stylesheet" href="style2.css">
     <!-- Scrollbar Custom CSS -->
    
     <link rel="stylesheet" href="../css/style.css">
@@ -40,6 +51,7 @@ require_once ('../database/database.php');
 
     <title><?php include('../include/title.php') ?></title>
 </head>
+
 
 <body>
     <nav id="header">
@@ -68,13 +80,13 @@ require_once ('../database/database.php');
 
         <div class="lang-menu">
             <?php echo '<div class="selected-lang ' . ($currentLanguage) . '"> </div>' ?>
-                <ul>
-                    <li>
-                        <?php print "<a href='?language=nl' class='nl'>" . ($currentLanguage == "en" ? "Dutch" : "Nederlands") . "</a>" ?>
-                    </li>
-                    <li>
-                        <?php print "<a href='?language=en' class='en'>" . ($currentLanguage == "en" ? "English" : "Engels") . "</a>" ?>
-                    </li>
-                </ul>
+            <ul>
+                <li>
+                    <?php print "<a href='?language=nl' class='nl'>" . ($currentLanguage == "en" ? "Dutch" : "Nederlands") . "</a>" ?>
+                </li>
+                <li>
+                    <?php print "<a href='?language=en' class='en'>" . ($currentLanguage == "en" ? "English" : "Engels") . "</a>" ?>
+                </li>
+            </ul>
         </div>
     </nav>
